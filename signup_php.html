@@ -1,11 +1,22 @@
 <!doctype html>
 <html>
+<?php
+
+$bdd = new PDO('mysql:host=127.0.0.1;dbname=sign_up', 'root','');<!--This part is set as default for you user if you want test-->
+
+if (isset($_POST['button']))
+
+{
+    echo "ok";
+}
+
+?>
 <head>
 <meta charset="utf-8">
 <title>Communication-web</title>
 </head>
 <body>
-			<!--pseudo_sign_up-->
+																				<!--pseudo_sign_up-->
                 	<div align="center">
                     	<h2>Inscription</h2>
                         <br /><br />
@@ -13,7 +24,7 @@
                         <table>
                         	<tr>
                         	<td align="right">
-                        		<label for="pseudo">                            Pseudo :</label><!-- here i use alt+255 for ghost char because the table is offbeat-->
+                        		<label for="pseudo">                                Pseudo :</label><!-- here i use alt+255 for ghost char because the table is 							offbeat-->
                             </td>
                             <td align="right">
                         		<input type="text"
@@ -24,13 +35,13 @@
                         </table>
                         </form>
                     </div>
-                	<!--mail_sign_up-->
-			<div align="center">
+                																<!--mail_sign_up-->
+				<div align="center">
                         <form method="POST" action="">
                         <table>
                         	<tr>
                         	<td align="right">
-                        		<label for="mail">                                 Mail :</label><!-- here i use alt+255 for ghost char because the table is offbeat-->
+                        		<label for="mail">                                    Mail :</label><!-- here i use alt+255 for ghost char because the table is offbeat-->
                             </td>
                             <td align="left">
                         		<input type="text"
@@ -42,13 +53,13 @@
                         </form>
                     </div>
                     
-                	<!--mail_sign_up_conf-->
-                	<div align="center">
+                																<!--mail_sign_up_conf-->
+                <div align="center">
                         <form method="POST" action="">
                         <table>
                         	<tr>
                         	<td align="right">
-                        		<label for="mail2">                        Confirmez :</label><!-- here i use alt+255 for ghost char because the table is offbeat-->
+                        		<label for="mail2">                           Confirmez :</label>
                             </td>
                             <td align="right">
                         		<input type="text"
@@ -59,13 +70,13 @@
                         </table>
                         </form>
                     </div>
-                    <!--MDP_sign_up-->
+                    															<!--MDP_sign_up-->
                     <div align="center">
                         <form method="POST" action="">
                         <table>
                         	<tr>
                         	<td align="right">
-                        	<label for="mdp">                    Mot de passe :</label><!-- here i use alt+255 for ghost char because the table is offbeat-->
+                        	<label for="mdp">                       Mot de passe :</label>
                             </td>
                             <td align="right">
                         		<input type="password"
@@ -76,10 +87,10 @@
                         </table>
                         </form>
                     </div>
-                    <!--MDP_Conf_sign_up-->
+                    															<!--MDP_Conf_sign_up-->
                     <div align="center">
-                    <form method="POST" action="">
-                    	<table>
+                        <form method="POST" action="">
+                        <table>
                         	<tr>
                         	<td align="right">
                         	<label for="mdp2">Confirmation Mot de passe :</label>
@@ -90,6 +101,12 @@
                             	name="mdp2" />
                             </td>
                             </tr>
+                            <tr>
+                            	<td></td>
+                                <td>
+                                	<input type="submit" name="button" value="Je m'inscrit"/>
+                                </td>
+                                </tr>
                         </table>
                         </form>
                     </div>
