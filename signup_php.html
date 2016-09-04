@@ -2,12 +2,18 @@
 <html>
 <?php
 
-$bdd = new PDO('mysql:host=127.0.0.1;dbname=sign_up', 'root','');<!--This part is set as default for you user if you want test-->
+$bdd = new PDO('mysql:host=127.0.0.1;dbname=sign_up', 'root','');
 
 if (isset($_POST['button']))
-
 {
-    echo "ok";
+    if(!empty($_POST['pseudo']) AND !empty($_POST['mail']) AND !empty($_POST['mail2']) AND !empty($_POST['mdp']) AND !empty($_POST['mdp2'])) <!--here i have a problem, the computer always say no even if all field is not empty-->
+    {
+        echo "ok";
+    }
+    else
+    {
+            echo "non";
+    }
 }
 
 ?>
@@ -24,7 +30,7 @@ if (isset($_POST['button']))
                         <table>
                         	<tr>
                         	<td align="right">
-                        		<label for="pseudo">                                Pseudo :</label><!-- here i use alt+255 for ghost char because the table is offbeat-->
+                        		<label for="pseudo">                                Pseudo :</label><!-- here i use alt+255 for ghost char because the table is 							offbeat-->
                             </td>
                             <td align="right">
                         		<input type="text"
@@ -44,7 +50,7 @@ if (isset($_POST['button']))
                         		<label for="mail">                                    Mail :</label><!-- here i use alt+255 for ghost char because the table is offbeat-->
                             </td>
                             <td align="left">
-                        		<input type="text"
+                        		<input type="email" 
                             	placeholder="votre mail" id="mail"
                             	name="mail" />
                             </td>
@@ -62,7 +68,7 @@ if (isset($_POST['button']))
                         		<label for="mail2">                           Confirmez :</label>
                             </td>
                             <td align="right">
-                        		<input type="text"
+                        		<input type="email"
                             	placeholder="votre mail" id="mail2"
                             	name="mail2" />
                             </td>
